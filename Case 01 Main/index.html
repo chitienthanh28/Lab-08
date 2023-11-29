@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Case.css">
+</head>
+<body>
+    <button id="myButtonAddStaff">Thêm Nhân Viên</button>
+
+    <!-- Form Thêm Nhân Viên -->
+    <div id="myFormAddStaff">
+        <h1>Thêm Nhân Viên Công Ty</h1>
+        <div class="myInput">
+            <div class="myInputFullName">
+                <p>Full Name</p>
+                <input type="text" name="" id="InputFullName" placeholder="Nhập Đầy Đủ Họ Và Tên">
+            </div>
+            <div class="myInputBaseSalary">
+                <p>Base Salary</p>
+                <input type="number" name="" id="InputBaseSalary" placeholder="Nhập Lương Căn Bản">
+            </div>
+            <div class="myInputProductSalary">
+                <p>Product Salary</p>
+                <input type="number" name="" id="InputProductSalary" placeholder="Nhập Lương Sản Phẩm">
+            </div>
+            <div class="myInputProductQuantity">
+                <p>Product Quantity</p>
+                <input type="number" name="" id="InputProductQuantity" placeholder="Nhập số lượng sản phẩm">
+            </div>
+        </div><br>
+        <div class="myButton">
+            <button onclick="addValueStaff ()">Xác Nhận</button>
+            <button>Hủy</button>
+        </div> <br>
+        <button onclick="reViewStaff ()" id="myButtonReview">Xuất Danh Sách Vừa Được Thêm</button>
+        <button onclick="reViewStaffAscending()" id="myButtonReviewAscending">Sắp xếp danh sách nhân viên tăng dần theo tổng lương</button>
+        
+    </div>
+    <!-- Table Danh Sách Nhân Viên -->
+    <div>
+        <table id="myTable" border="1">
+            <caption>Danh Sách Nhân Viên</caption>
+            <tr>
+                <th>ID</th>
+                <th>FullName</th>
+                <th>BaseSalary</th>
+                <th>ProductSalary</th>
+                <th>TotalSalary</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="Case.js"></script>
+</body>
+</html>
