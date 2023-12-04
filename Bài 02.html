@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số Thuận Nghịch</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <label for="numberInput">Nhập giá trị n:</label>
+    <input type="text" id="numberInput">
+    <button onclick="checkPalindrome()">Kiểm Tra</button>
+    <p id="result"></p>
+
+    <script>
+        // Hàm kiểm tra xem một chuỗi có phải là số thuận nghịch hay không
+        function isPalindrome(str) {
+            const reversedStr = str.toString().split('').reverse().join('');
+            return str.toString() === reversedStr;
+        }
+
+        function checkPalindrome() {
+            const inputNumber = $("#numberInput").val();
+            const resultElement = $("#result");
+
+            // Kiểm tra xem người dùng đã nhập giá trị hay không
+            if (!inputNumber) {
+                resultElement.text("Vui lòng nhập giá trị N.");
+                return;
+            }
+
+            // Kiểm tra xem N có phải là số hay không
+            if (isNaN(inputNumber)) {
+                resultElement.text("N không phải là số.");
+                return;
+            }
+
+            // Kiểm tra xem N có phải là số thuận nghịch hay không
+            if (isPalindrome(inputNumber)) {
+                resultElement.text(`${inputNumber} là số thuận nghịch.`);
+            } else {
+                resultElement.text(`${inputNumber} không phải là số thuận nghịch.`);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh 2 số</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <label for="number1">Nhập số thứ nhất:</label>
+    <input type="text" id="number1">
+
+    <label for="number2">Nhập số thứ hai:</label>
+    <input type="text" id="number2">
+
+    <button onclick="compareNumbers()">So sánh</button>
+
+    <p id="result"></p>
+
+    <script>
+        function compareNumbers() {
+            const number1 = $("#number1").val();
+            const number2 = $("#number2").val();
+            const resultElement = $("#result");
+
+            // Kiểm tra xem người dùng đã nhập giá trị hay không
+            if (!number1 || !number2) {
+                resultElement.text("Vui lòng nhập cả hai số.");
+                return;
+            }
+
+            // Kiểm tra xem cả hai giá trị có phải là số hay không
+            if (isNaN(number1) || isNaN(number2)) {
+                resultElement.text("Cả hai giá trị phải là số.");
+                return;
+            }
+
+            // So sánh và xuất ra số lớn hơn
+            const largerNumber = Math.max(Number(number1), Number(number2));
+            resultElement.text(`Số lớn hơn là: ${largerNumber}`);
+        }
+    </script>
+
+</body>
+</html>

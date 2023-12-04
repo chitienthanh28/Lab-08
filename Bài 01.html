@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div style="border: 1px solid gray ;"> div (parent)
+        <p style="border: 1px solid gray ; margin-left: 10px ; ">p</p>
+        <span style="border: 1px solid gray ; margin-left: 10px ;">span</span>
+        <h2 style="border: 1px solid gray ; margin-left: 10px ;">h2</h2>
+        <h3 style="border: 1px solid gray ; margin-left: 10px ;">h3</h3>
+        <h4 style="border: 1px solid gray ; margin-left: 10px ;">h4</h4>
+        <h5 style="border: 1px solid gray ; margin-left: 10px ;">h5</h5>
+        <h6 style="border: 1px solid gray ; margin-left: 10px ;">h6</h6>
+        <p style="border: 1px solid gray ; margin-left: 10px ;">p</p>
+    </div>
+
+    <script>
+        // Sử dụng jQuery để thêm style color cho các thẻ từ thẻ h2 đến h6
+        $(document).ready(function() {
+            $("span").nextUntil("p").css({"color":"red","border":"2px solid red"})
+        })
+    </script>
+</body>
+</html>
